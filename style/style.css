@@ -127,3 +127,29 @@ h1{
 .visible{
     visibility: visible;
 }
+
+@media screen and (max-width: 450px) {
+    h1, h3{
+        width: 60vw;
+    }
+    #topPart{
+        flex-direction: column;
+        justify-content: center;
+    }
+    #topDroit{
+        height: 10vh;
+    }
+    #corps{
+        width: 90%;
+        height: 45vh;
+        margin: auto;
+        background-position: center;
+       
+    }
+    #etoiles{
+        width: 70%;
+    }
+    #checked{
+        font-size: 2vh;
+    }
+}
