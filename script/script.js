@@ -8,15 +8,18 @@ let etoiles = document.querySelector('#etoiles');
 let checked = document.querySelector('#checked');
 let corps = document.querySelector('#corps');
 let btnReload = document.querySelector('#btnReload');
-let dictionnaire = ["cacatoes", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime"];
+let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
+let alphabetCheck;
+let dictionnaire = ["cacatoes", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire"];
 let motMystere;
 let compteur;
 let motAffiche = []
-//on initialise le mot mystere puis le mot affiché avec des * puis le reste de l'affichage de la page
+
+//on initialise le mot mystere puis le mot affiché avec des * puis le reste de l'affichage de la page. Le tout dans une fonction start()
 
 function start(){
-    
-    checked.textContent = "Les lettres déjà utilisées : "
+    let alphabetCheck = alphabet;
+    checked.textContent = alphabetCheck;
     motAffiche = []
     compteur = 7;
     corps.classList.add('corps7');
@@ -26,7 +29,7 @@ function start(){
     }
     etoiles.textContent = motAffiche;
     coeur.textContent = `il vous reste ${compteur} vies`;
-
+ 
 }
 
 start()
@@ -39,14 +42,15 @@ btn.addEventListener('click', function(e){
     let temp = motMystere.indexOf(lettreEntree.value);
     console.log(lettreEntree.value)
     console.log(temp);
-    if(temp < 0){
+    if(lettreEntree.value.length>1){
+        alert('Il ne vous faut entrer qu\'une lettre');
+    }
+    else if(temp < 0){
         if(compteur>0){
 
             corps.classList.remove(`corps${compteur}`);
             compteur --;
             corps.classList.add(`corps${compteur}`);
-        }else{
-            
         }
   
     }else{
@@ -61,7 +65,7 @@ btn.addEventListener('click', function(e){
         
     }
     coeur.textContent = `il vous reste ${compteur} vies`;
-    checked.textContent +=`${lettreEntree.value}, `;
+    checked.textContent = alphabetCheck;
     etoiles.textContent = motAffiche;
     
 //les conditions de fin de jeu :
