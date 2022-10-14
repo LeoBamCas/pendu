@@ -10,6 +10,7 @@ let corps = document.querySelector('#corps');
 let btnReload = document.querySelector('#btnReload');
 let ronnie = document.querySelector('#ronnie');
 let mort = document.querySelector('#mort');
+let ambiance = document.querySelector('#ambiance');
 let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
 let alphabetCheck = '';
 let dictionnaire = ["cacatoes","xylophone", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire"];
@@ -35,6 +36,7 @@ function start(){
     coeur.textContent = `il vous reste ${compteur} vies`;
     ronnie.pause();
     mort.pause();
+   
  
 }
 
@@ -50,14 +52,16 @@ start()
 btn.addEventListener('click', function(e){
 
     e.preventDefault();
+    ambiance.play();
     let temp = motMystere.indexOf(lettreEntree.value);
-    console.log(lettreEntree.value)
-    console.log(temp);
     if(lettreEntree.value.length>1){                                    //si l'utilisateur entre plusieurs lettres
         alert('Il ne vous faut entrer qu\'une lettre');
     }
     else if(lettreEntree.value === ''){
         alert('Il vous faut entrer une lettre')
+    }
+    else if(alphabetCheck.indexOf(lettreEntree.value)<0){
+        alert('lettre déjà soumise');
     }
     else if(temp < 0){
         if(compteur>0){                                                 //si l'utilisateur se trompe
@@ -66,15 +70,15 @@ btn.addEventListener('click', function(e){
             compteur --;
             corps.classList.add(`corps${compteur}`);
             alphabetCheck = alphabetCheck.slice(0,alphabetCheck.indexOf(lettreEntree.value)) + alphabetCheck.slice(alphabetCheck.indexOf(lettreEntree.value)+2,alphabetCheck.length);
-            console.log(alphabetCheck);
         }
       
     }else{                                                              //si la lettre est contenu dans motMystere
         while(temp>=0){
             motAffiche[temp] = motMystere[temp];           
             temp = motMystere.indexOf(lettreEntree.value,temp+1);
-            alphabetCheck = alphabetCheck.slice(0,alphabetCheck.indexOf(lettreEntree.value)) + alphabetCheck.slice(alphabetCheck.indexOf(lettreEntree.value)+2,alphabetCheck.length);
+           
         }
+        alphabetCheck = alphabetCheck.slice(0,alphabetCheck.indexOf(lettreEntree.value)) + alphabetCheck.slice(alphabetCheck.indexOf(lettreEntree.value)+2,alphabetCheck.length);
         
     }
     coeur.textContent = `il vous reste ${compteur} vies`;
@@ -91,6 +95,7 @@ btn.addEventListener('click', function(e){
         coeur.textContent = `C'est perdu`;
         btnReload.classList.remove('hidden');
         btnReload.classList.add('visible');
+        ambiance.pause();
         mort.play();
 
     }else if (motAffiche.indexOf('*')<0){
@@ -99,6 +104,7 @@ btn.addEventListener('click', function(e){
         corps.classList.add('gagne');
         btnReload.classList.remove('hidden');
         btnReload.classList.add('visible');
+        ambiance.pause();
         ronnie.play();
     }
 
