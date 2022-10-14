@@ -8,8 +8,10 @@ let etoiles = document.querySelector('#etoiles');
 let checked = document.querySelector('#checked');
 let corps = document.querySelector('#corps');
 let btnReload = document.querySelector('#btnReload');
+let ronnie = document.querySelector('#ronnie');
+let mort = document.querySelector('#mort');
 let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
-let alphabetCheck;
+let alphabetCheck = '';
 let dictionnaire = ["cacatoes", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire"];
 let motMystere;
 let compteur;
@@ -31,6 +33,8 @@ function start(){
     }
     etoiles.textContent = motAffiche;
     coeur.textContent = `il vous reste ${compteur} vies`;
+    ronnie.pause();
+    mort.pause();
  
 }
 
@@ -64,7 +68,6 @@ btn.addEventListener('click', function(e){
         while(temp>=0){
             motAffiche[temp] = motMystere[temp];           
             temp = motMystere.indexOf(lettreEntree.value,temp+1);
-
         }
         
     }
@@ -79,6 +82,7 @@ btn.addEventListener('click', function(e){
         coeur.textContent = `C'est perdu`;
         btnReload.classList.remove('hidden');
         btnReload.classList.add('visible');
+        mort.play();
 
     }else if (motAffiche.indexOf('*')<0){
         coeur.textContent = `C'est gagné`;
@@ -86,6 +90,7 @@ btn.addEventListener('click', function(e){
         corps.classList.add('gagne');
         btnReload.classList.remove('hidden');
         btnReload.classList.add('visible');
+        ronnie.play();
     }
 
 
