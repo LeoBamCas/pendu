@@ -20,7 +20,7 @@ let motAffiche = []
 //on initialise le mot mystere puis le mot affiché avec des * puis le reste de l'affichage de la page. Le tout dans une fonction start()
 
 function start(){
-    let alphabetCheck = alphabet;
+    alphabetCheck = alphabet;
     checked.textContent = alphabetCheck;
     motAffiche = []
     compteur = 7;
@@ -53,21 +53,24 @@ btn.addEventListener('click', function(e){
     let temp = motMystere.indexOf(lettreEntree.value);
     console.log(lettreEntree.value)
     console.log(temp);
-    if(lettreEntree.value.length>1){
+    if(lettreEntree.value.length>1){                                    //si l'utilisateur entre plusieurs lettres
         alert('Il ne vous faut entrer qu\'une lettre');
     }
     else if(temp < 0){
-        if(compteur>0){
+        if(compteur>0){                                                 //si l'utilisateur se trompe
 
             corps.classList.remove(`corps${compteur}`);
             compteur --;
             corps.classList.add(`corps${compteur}`);
+            alphabetCheck = alphabetCheck.slice(0,alphabetCheck.indexOf(lettreEntree.value)) + alphabetCheck.slice(alphabetCheck.indexOf(lettreEntree.value)+2,alphabetCheck.length);
+            console.log(alphabetCheck);
         }
       
-    }else{
+    }else{                                                              //si la lettre est contenu dans motMystere
         while(temp>=0){
             motAffiche[temp] = motMystere[temp];           
             temp = motMystere.indexOf(lettreEntree.value,temp+1);
+            alphabetCheck = alphabetCheck.slice(0,alphabetCheck.indexOf(lettreEntree.value)) + alphabetCheck.slice(alphabetCheck.indexOf(lettreEntree.value)+2,alphabetCheck.length);
         }
         
     }
