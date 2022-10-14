@@ -22,6 +22,8 @@ function start(){
     checked.textContent = alphabetCheck;
     motAffiche = []
     compteur = 7;
+    corps.classList.remove('corps0');
+    corps.classList.remove('gagne');
     corps.classList.add('corps7');
     motMystere = dictionnaire[Math.floor(Math.random()*dictionnaire.length)];
     for(i=0;i<motMystere.length;i++){
@@ -31,6 +33,11 @@ function start(){
     coeur.textContent = `il vous reste ${compteur} vies`;
  
 }
+
+//fonction pour ne plus afficher une lettre déjà entrée
+
+
+//on demarre
 
 start()
 //on lance le jeu au clic
@@ -52,14 +59,11 @@ btn.addEventListener('click', function(e){
             compteur --;
             corps.classList.add(`corps${compteur}`);
         }
-  
+      
     }else{
         while(temp>=0){
-
-            motAffiche[temp] = motMystere[temp];
-            console.log(`motAf : ${motAffiche[temp]}, motM ${motMystere[temp]}`)
+            motAffiche[temp] = motMystere[temp];           
             temp = motMystere.indexOf(lettreEntree.value,temp+1);
-            console.log(`temp fin while : ${temp}`)
 
         }
         

@@ -8,9 +8,7 @@
     display: flex;
     flex-direction: column;
 }
-
-.corps7{
-    background-image: url('../public/img/pendu-part1.png');
+#corps{
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
@@ -18,92 +16,48 @@
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5%;
+}
+.corps7{
+    background-image: url('../public/img/pendu-part1.png');
+
 }
 
 .corps6{
     background-image: url('../public/img/pendu-part2.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 
 .corps5{
     background-image: url('../public/img/pendu-part3.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 
 .corps4{
     background-image: url('../public/img/pendu-part4.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 
 .corps3{
     background-image: url('../public/img/pendu-part5.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 
 .corps2{
     background-image: url('../public/img/pendu-part6.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 
 .corps1{
     background-image: url('../public/img/pendu-part7.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 .corps0{
     background-image: url('../public/img/perdu.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 .gagne{
     background-image: url('../public/img/gagne.jpeg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
+
 }
 #etoiles{
     text-align: center;
