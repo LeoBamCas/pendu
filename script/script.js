@@ -36,6 +36,8 @@ function start(){
     coeur.textContent = `il vous reste ${compteur} vies`;
     ronnie.pause();
     mort.pause();
+    btnReload.classList.remove('visible');
+    btnReload.classList.add('hidden');
    
  
 }

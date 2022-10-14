@@ -128,9 +128,12 @@ h1{
     visibility: visible;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 900px) {
     h1, h3{
         width: 60vw;
+    }
+    #titre{
+        margin-bottom: 3vh;
     }
     #topPart{
         flex-direction: column;
@@ -151,5 +154,16 @@ h1{
     }
     #checked{
         font-size: 2vh;
+        width: 100%;
+        margin-top: 0%;
+        text-align: center;
+    }
+    #vie{
+        padding: 1vh;
+
+    }
+    #coeur{
+        margin: 0%;
+        text-align: center;
     }
 }
