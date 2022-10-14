@@ -7,7 +7,7 @@
 
 body{
     background-image: url('../public/img/gibet.jpeg');
-    color: white;
+    color: #dfdfdf;
     font-family: 'DEATHCROW';
 }
 
@@ -16,6 +16,24 @@ body{
     display: flex;
     flex-direction: row;
 }
+#titre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1,h3{
+    text-align: center;
+    background-color: rgba(70, 70, 78, 0.7);
+    border-radius: 5%;
+    width: 20vw;
+    margin: auto;
+    color: rgb(255, 121, 87);
+}
+
+h1{
+    font-size: 7vh;
+}
+
 
 #topDroit{
     display: flex;
@@ -89,7 +107,7 @@ body{
     margin-top: 10%;
     background-color: rgba(120, 120, 131, 0.7);
     border-radius: 5%;
-    width: 10vw;
+    width: 15vw;
     font-size: 4vh;
 }
 #recherche{
