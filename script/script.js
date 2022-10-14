@@ -12,7 +12,7 @@ let ronnie = document.querySelector('#ronnie');
 let mort = document.querySelector('#mort');
 let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
 let alphabetCheck = '';
-let dictionnaire = ["cacatoes", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire"];
+let dictionnaire = ["cacatoes","xylophone", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire"];
 let motMystere;
 let compteur;
 let motAffiche = []
@@ -56,6 +56,9 @@ btn.addEventListener('click', function(e){
     if(lettreEntree.value.length>1){                                    //si l'utilisateur entre plusieurs lettres
         alert('Il ne vous faut entrer qu\'une lettre');
     }
+    else if(lettreEntree.value === ''){
+        alert('Il vous faut entrer une lettre')
+    }
     else if(temp < 0){
         if(compteur>0){                                                 //si l'utilisateur se trompe
 
@@ -77,6 +80,9 @@ btn.addEventListener('click', function(e){
     coeur.textContent = `il vous reste ${compteur} vies`;
     checked.textContent = alphabetCheck;
     etoiles.textContent = motAffiche;
+       //on prépare la prochaine saisie utilisateur
+       lettreEntree.value=""; // vide le champs de saisie
+       lettreEntree.focus();   // remet le focus sur le champs
     
 //les conditions de fin de jeu :
 

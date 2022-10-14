@@ -1,3 +1,16 @@
+
+@font-face {
+    font-family: 'DEATHCROW';
+    src: url('../public/fonts/DEATHCROW.ttf');
+}
+
+
+body{
+    background-image: url('../public/img/gibet.jpeg');
+    color: white;
+    font-family: 'DEATHCROW';
+}
+
 #topPart{
     height: 50vh;
     display: flex;
@@ -7,8 +20,14 @@
 #topDroit{
     display: flex;
     flex-direction: column;
-    margin: 10%;
-    margin-right: 20%;
+    margin-top: 10%;
+    background-color: rgba(120, 120, 131, 0.7);
+    border-radius: 5%;
+}
+#checked{
+    padding: 5%;
+    font-size: 4vh;
+    width: 15vw;
 }
 #corps{
     background-repeat: no-repeat;
@@ -16,7 +35,7 @@
     height: 100%;
     width: 30%;
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 10%;
     margin-top: 5%;
 }
 .corps7{
@@ -61,13 +80,27 @@
     background-image: url('../public/img/gagne.jpeg');
 
 }
+#ciel{
+    display: flex;
+    justify-content: center;
+}
 #etoiles{
     text-align: center;
-    margin: 10%;
+    margin-top: 10%;
+    background-color: rgba(120, 120, 131, 0.7);
+    border-radius: 5%;
+    width: 10vw;
+    font-size: 4vh;
 }
 #recherche{
-    margin:10%;
+    
     text-align: center;
+    font-size: 3vh;
+
+}
+#recherche form label{
+    background-color: rgba(120, 120, 131, 0.7);
+    border-radius: 5%;
 }
 
 .hidden{
