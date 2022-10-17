@@ -18,6 +18,7 @@ let motMystere;
 let compteur;
 let motAffiche = []
 
+
 //on initialise le mot mystere puis le mot affiché avec des * puis le reste de l'affichage de la page. Le tout dans une fonction start()
 
 function start(){
@@ -55,8 +56,15 @@ btn.addEventListener('click', function(e){
 
     e.preventDefault();
     ambiance.play();
+    lettreEntree.value = lettreEntree.value.toLowerCase();
     let temp = motMystere.indexOf(lettreEntree.value);
-    if(lettreEntree.value.length>1){                                    //si l'utilisateur entre plusieurs lettres
+    if (coeur.textContent === `C'est perdu`){
+        alert("rien ne sert de s'acharner, assume ta défaite");
+    }
+    else if(coeur.textContent === `C'est gagné`){
+            alert("calme toi, c'est déjà gagné !");
+    }
+    else if(lettreEntree.value.length>1){                                    //si l'utilisateur fait une erreur
         alert('Il ne vous faut entrer qu\'une lettre');
     }
     else if(lettreEntree.value === ''){
@@ -99,7 +107,6 @@ btn.addEventListener('click', function(e){
         btnReload.classList.add('visible');
         ambiance.pause();
         mort.play();
-
     }else if (motAffiche.indexOf('*')<0){
         coeur.textContent = `C'est gagné`;
         corps.classList.remove(`corps${compteur}`);
@@ -107,7 +114,7 @@ btn.addEventListener('click', function(e){
         btnReload.classList.remove('hidden');
         btnReload.classList.add('visible');
         ambiance.pause();
-        ronnie.play();
+        ronnie.play();   
     }
 
 
