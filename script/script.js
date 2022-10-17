@@ -13,7 +13,7 @@ let mort = document.querySelector('#mort');
 let ambiance = document.querySelector('#ambiance');
 let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
 let alphabetCheck = '';
-let dictionnaire = ["cacatoes","xylophone", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire"];
+let dictionnaire = ["cacatoes","xylophone", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire", "myxomatosegit add"];
 let motMystere;
 let compteur;
 let motAffiche = []
