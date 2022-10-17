@@ -13,7 +13,7 @@ let mort = document.querySelector('#mort');
 let ambiance = document.querySelector('#ambiance');
 let alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z '
 let alphabetCheck = '';
-let dictionnaire = ["cacatoes","xylophone", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire", "myxomatosegit add"];
+let dictionnaire = ["cacatoes","xylophone", "percolateur","armorique","bistouquette","primaire","mistigri","nullissime","gonflant","hereditaire", "myxomatose"];
 let motMystere;
 let compteur;
 let motAffiche = []
@@ -22,6 +22,7 @@ let motAffiche = []
 //on initialise le mot mystere puis le mot affiché avec des * puis le reste de l'affichage de la page. Le tout dans une fonction start()
 
 function start(){
+    lettreEntree.focus(); 
     alphabetCheck = alphabet;
     checked.textContent = alphabetCheck;
     motAffiche = []
