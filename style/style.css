@@ -41,6 +41,7 @@ h1{
     margin-top: 10%;
     background-color: rgba(120, 120, 131, 0.7);
     border-radius: 5%;
+    height: fit-content;
 }
 #checked{
     padding: 5%;
@@ -127,6 +128,9 @@ h1{
 .visible{
     visibility: visible;
 }
+#vies{
+    text-align: center;
+}
 
 @media screen and (max-width: 900px) {
     h1, h3{
@@ -138,9 +142,6 @@ h1{
     #topPart{
         flex-direction: column;
         justify-content: center;
-    }
-    #topDroit{
-        height: 10vh;
     }
     #corps{
         width: 90%;
